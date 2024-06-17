@@ -1,0 +1,20 @@
+name: Learning GitHub Actions
+
+on: workflow_dispatch
+
+jobs:
+  build: Git Operations
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check Git Branch
+      run: git branch
+
+    - name: Checkout Git Branch
+      run: git checkout minNumOfSeatsToMoveEveryone
+
+    - name: Check Git Branch again
+      run: git branch
