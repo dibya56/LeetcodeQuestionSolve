@@ -18,7 +18,19 @@ jobs:
       run: git fetch --all
 
     - name: Checkout Git Branch
-      run: git checkout minNumOfSeatsToMoveEveryone
+      run: git checkout -b newActionBranch
+
+    - name: Check Git log
+      run: git log
+
+    - name: Reset Hard
+      run: git reset --hard HEAD~2
+
+    - name: Again Check Git log
+      run: git log
 
     - name: Check Git Branch again
       run: git branch
+
+    - name: Git Push
+      run: git push -u origin newActionBranch
