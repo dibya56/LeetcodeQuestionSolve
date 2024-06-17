@@ -14,6 +14,9 @@ jobs:
     - name: Check Git Branch
       run: git branch
 
+    - name: Git fetch
+      run: git fetch --all
+
     - name: Checkout Git Branch
       run: git checkout minNumOfSeatsToMoveEveryone
 
