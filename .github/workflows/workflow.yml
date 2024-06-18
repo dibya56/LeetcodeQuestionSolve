@@ -24,7 +24,7 @@ jobs:
       run: git log -n 3
 
     - name: Reset Hard
-      run: git reset --hard HEAD~2
+      run: git reset --hard HEAD~1
 
     - name: Again Check Git log
       run: git log
