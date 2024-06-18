@@ -41,6 +41,7 @@ jobs:
       run: git push -u origin newActionBranch
 
     - name: Git config unset
+      if: always()
       run: |
         git config --unset-all user.name
         git config --unset-all user.email
