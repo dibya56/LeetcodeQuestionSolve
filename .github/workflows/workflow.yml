@@ -21,7 +21,7 @@ jobs:
       run: git checkout -b newActionBranch
 
     - name: Check Git log
-      run: git log
+      run: git log -n 3
 
     - name: Reset Hard
       run: git reset --hard HEAD~2
