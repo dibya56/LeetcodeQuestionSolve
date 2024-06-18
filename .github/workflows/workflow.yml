@@ -23,6 +23,11 @@ jobs:
     - name: Check Git log
       run: git log -n 3
 
+    - name: Git Config
+      run: |
+        git config user.name ${{ secrets.NAME }}
+        git config user.email ${{ secrets.EMAIL_ID }}
+
     - name: Reset Hard
       run: git reset --hard HEAD~1
 
@@ -34,3 +39,8 @@ jobs:
 
     - name: Git Push
       run: git push -u origin newActionBranch
+
+    - name: Git config unset
+      run: |
+        git config --unset-all user.name
+        git config --unset-all user.email
