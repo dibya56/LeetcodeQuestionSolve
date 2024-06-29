@@ -2,8 +2,6 @@ name: Learning GitHub Actions
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '* * * * *'
 
 jobs:
   build:
