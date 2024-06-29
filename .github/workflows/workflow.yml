@@ -2,6 +2,8 @@ name: Learning GitHub Actions
 
 on:
   workflow_dispatch:
+schedule:
+  - cron: '* * * * *'
 
 jobs:
   build:
@@ -17,9 +19,6 @@ jobs:
     - name: Git fetch
       run: git fetch --all
 
-    - name: Checkout Git Branch
-      run: git checkout -b newActionBranch
-
     - name: Check Git log
       run: git log -n 3
 
@@ -28,17 +27,20 @@ jobs:
         git config user.name ${{ secrets.NAME }}
         git config user.email ${{ secrets.EMAIL_ID }}
 
-    - name: Reset Hard
-      run: git reset --hard HEAD~1
+    - name: c1
+      run: git checkout minNumOfSeatsToMoveEveryone
+
+    - name: rebase
+      run: |
+        git fetch --all
+        git rebase origin/main
+        git push -f
 
     - name: Again Check Git log
       run: git log
 
     - name: Check Git Branch again
       run: git branch
-
-    - name: Git Push
-      run: git push -u origin newActionBranch
 
     - name: Git config unset
       if: always()
